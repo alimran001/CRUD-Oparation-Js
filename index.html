@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple User CRUD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>User CRUD (JSON)</h1>
+
+      <section class="card">
+        <h2>User Form</h2>
+        <form id="user-form">
+          <input type="hidden" id="user-id" />
+
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" required />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+          </div>
+
+          <div class="field">
+            <label for="age">Age</label>
+            <input id="age" name="age" type="number" min="1" required />
+          </div>
+
+          <div class="actions">
+            <button type="submit" id="save-btn">Save / Update</button>
+            <button type="button" id="reset-btn" class="secondary">
+              Clear
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Search By ID</h2>
+        <div class="search-row">
+          <input id="search-id" type="number" placeholder="Enter user id" />
+          <button id="search-btn">Search</button>
+          <button id="clear-search-btn" class="secondary">Show All</button>
+        </div>
+        <p id="search-result" class="muted"></p>
+      </section>
+
+      <section class="card">
+        <h2>All Users</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Age</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="user-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+  </html>
